@@ -1,0 +1,7 @@
+command /heal:
+	aliases: /h
+	usage: &e/heal
+	trigger:
+		set food of player to 20
+		set health of player to 20
+		send "&3DONE"

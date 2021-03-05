@@ -1,0 +1,24 @@
+command /sethome <string>:
+  description: Sets your home
+  executable by: players
+  trigger:
+    set {homes::%uuid of player%::%arg-1%} to location of player
+    message "This home <green>-->%arg-1%<reset> to <yellow>%location of player%<reset>"
+
+
+command /home <string>:
+  executable by: players
+  trigger:
+    if {homes::%uuid of player%::%arg-1%} is not set:
+      message "<red>You have not set a home yet!<reset>"
+      message "<green>Set a home by writing /sethome<reset>"
+      message "<green>with a name for your home!"
+    else:
+      teleport player to {homes::%uuid of player%::%arg-1%}
+
+
+command /delhome <string>:
+  executable by players
+  trigger:
+    clear {homes::%uuid of player%::%arg-1%}
+    message "<green>Your home --> <yellow>%arg-1%<green> has been deleted!"

@@ -1,0 +1,11 @@
+# a one tap sword
+# it doesn't work on the ender dragon
+
+command /instakill:
+  permission: op
+  trigger:
+    give player netherite sword named "&41 Tap Kill" with lore "&5Kills anything in 1 shot"
+
+on damage:
+  if attacker is holding a netherite sword named "&41 Tap Kill" with lore "&5Kills anything in 1 shot":
+      kill victim

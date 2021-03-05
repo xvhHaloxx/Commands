@@ -1,0 +1,40 @@
+
+#fly command
+
+command /fly [<boolean>] [<player>]:
+  aliases: /f
+  permission: op
+  permission message: "You dont have permission to this command!!"
+  trigger:
+
+    if arg-1 is not set:
+      if player can fly:
+        set player's flight mode to false
+        message "&aYour flight mode was set to FALSE!"
+
+
+      else:
+        set player's flight mode to true
+        message "&aYour flight mode was set to TRUE!"
+
+
+      if arg-1 is true:
+        if arg-2 is not set:
+          set player's flight mode to true
+          message "&aYour flight mode was set to TRUE!"
+        else:
+          if player has permission "op":
+            set arg-2's flight mode to true
+            message "&aSet %arg-2%&a's flight mode to TRUE!"
+            send "&aYour flight mode was set to TRUE!" to arg-2
+
+
+      else if arg-1 is false:
+        if arg-2 is not set:
+          set player's flight mode to false
+          message "&aYour flight mode was set to FALSE!"
+        else:
+          if player has permission "op":
+            set arg-2's flight mode to false
+            message "&aSet %arg-2%&a's flight mode to FALSE!"
+            send "&aYour flight mode was set to FALSE!" to arg-2

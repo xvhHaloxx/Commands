@@ -1,0 +1,23 @@
+variables:
+  {frame} = blue stained glass pane
+
+command /gui:
+  permission: op
+  permission message: "&4BEEB BOOP BEEB BOOP CAN NOT RU-N-N!"
+  trigger:
+
+    open virtual chest inventory with size 3 named "&3GUI" to player
+
+    format gui slot 0 and 1 and 2 and 3 and 4 and 5 and 6 and 7 and 8 and 9 and 10 and 12 and 13 and 14 and 16 and 17 and 18 and 19 and 20 and 21 and 23 and 24 and 25 and 26 and 27 of player with {frame} named "&6"
+
+    format gui slot 11 of player with grass block named "&6SURVIVAL" with lore "&3Change Gamemode To:" and "&3Survival" to run:
+      set player's gamemode to survival
+      close player's inventory
+
+
+    format gui slot 15 of player with bedrock named "&6CREATIVE" with lore "&3Change Gamemode To:" and "&3Creative" to run:
+      set player's gamemode to creative
+      close player's inventory
+
+    format gui slot 22 of player with barrier named "&4CLOSE" to run:
+      close player's inventory

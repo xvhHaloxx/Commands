@@ -1,0 +1,35 @@
+command /keycard <text>:
+  permission: op
+  trigger:
+    if arg-1 is "a":
+      give player nametag named "&aKeyCard A"
+
+    if arg-1 is "b":
+      give player nametag named "&bKeyCard B"
+
+    else:
+      if arg-1 is not set:
+        send "You must specify the keycard you want!" to player
+
+on right click on iron door:
+  if block under clicked block is green terracotta:
+    if name of player's held item is "&aKeyCard A":
+      open clicked block
+      wait 1.5 seconds
+      close clicked block
+    else:
+      send "&7You need &aKeyCard A &7to open this door!"
+    wait 1 second
+
+on right click on iron door:
+  if block under clicked block is blue terracotta:
+    if name of player's held item is "&bKeyCard B":
+      play sound "iron_door_open" to player
+      open clicked block
+      wait 1.5 seconds
+      close clicked block
+      play sound "iron_door_close" to player
+    else:
+      wait 0.5 second
+      send "&7You need &bKeyCard B &7to open this door!"
+      wait 0.5 second

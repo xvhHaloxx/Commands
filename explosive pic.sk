@@ -1,0 +1,13 @@
+command /expic [<player>]:
+  trigger:
+    if arg-1 isn't set:
+      send "&eYou haven't chose a player!"
+    if arg-1 is set:
+      give arg-1 a diamond pickaxe named "&4Explode" with lore "&cExplosive 1"
+on mine:
+  if player is holding a diamond pickaxe named "&4Explode" with lore "&cExplosive 1":
+    create explosion with force 10 at event-block
+    wait 1 ticks
+    loop dropped items in radius 10 of player:
+      add item of loop-value to inventory of player
+      delete loop-value

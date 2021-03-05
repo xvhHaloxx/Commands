@@ -1,0 +1,8 @@
+command /dupe:
+  permission: op
+  trigger:
+    give player player's held item
+    if player's held item is air:
+      message "&eYou need to hold an item to dupe!" to player
+    else:
+      play sound "ENTITY_PLAYER_LEVELUP" to player

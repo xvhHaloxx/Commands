@@ -1,0 +1,16 @@
+command /setspawn:
+  permission: op
+  trigger:
+    set {spawn} to location of player
+    send "&eThis is now the spawn location!"
+
+command /spawn:
+  trigger:
+    teleport player to {spawn}
+    send "&3You have been sent to spawn!"
+
+#Work in progress
+#command /spawnall:
+#  permission: op
+#  trigger:
+#    teleport  to {spawn}

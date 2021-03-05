@@ -1,0 +1,12 @@
+#when you break these blocks, instead of them just breaking or how bookshelfs drop books, now they drop the item you actually BROKE like glass gives
+#glass and glass pane gives glass pane
+on break of glass:
+	drop glass
+
+on break of glass pane:
+	drop glass pane
+
+on break of bookshelf:
+	cancel event
+	set block to air
+	drop bookshelf
