@@ -7,4 +7,4 @@ You can use
 
 /home <string> | It can teleport you to that certain home.
   
-/delhome <string> This will delete a certain home.
+/delhome <string> | This will delete a certain home.
